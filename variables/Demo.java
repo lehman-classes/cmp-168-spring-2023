@@ -14,11 +14,15 @@ public class Demo {
     // float c = (float)a / (float)b;
     // System.out.printf("%.8f", c);
 
-    // String message = "Hello, class";
+    String message = "Hello, class";
     // System.out.println(message.concat(" of Spring 2023"));
-    Random random = new Random();
-    int x = random.nextInt();
-    System.out.println(x);
+    System.out.println(message.charAt(13));
+    // Random random = new Random();
+    // int x = random.nextInt();
+    // System.out.println(x);
+
+    // byte value = 0;
+    // System.out.println(value);
     // creating a variable
     // int number;
     // number = 1; // and assigned a value to it

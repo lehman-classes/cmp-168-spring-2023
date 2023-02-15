@@ -26,6 +26,15 @@ public class Car {
     color = newColor;
   }
 
+  public int primitivePassing(int num) {
+    num = num * 2;
+    return num;
+  }
+
+  public void referencePassing(Dog dog) {
+    dog.setName("NEW NAME");
+  }
+
   // behavior
   public void drive() {
     System.out.println("car is running");
@@ -44,12 +53,17 @@ public class Car {
   public boolean equals(Object obj) {
     if (obj == null || !(obj instanceof Car) ) {
      return false; 
-    } else {
-      String objColor = ((Car)obj).getColor();
-      if (this.color.equals(objColor)) {
-       return true; 
-      }
+    } 
+
+    if (this == obj) {
+      return true;
     }
+
+    String objColor = ((Car)obj).getColor();
+    if (this.color.equals(objColor)) {
+     return true; 
+    }
+
     return false;
   }
 }

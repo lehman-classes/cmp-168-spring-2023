@@ -11,6 +11,13 @@ public class Dog {
   private int ageInDogYears;
 
   Dog() {
+    this.name = "doggy doe";
+  }
+
+  Dog(String name, boolean vaccinated, int ageInDogYears) {
+    this.name = name;
+    this.isVaccinated = vaccinated;
+    this.ageInDogYears = ageInDogYears;
   }
 
   public String getName() {

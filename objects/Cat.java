@@ -3,7 +3,7 @@ package objects;
 /**
  * Cat
  */
-public class Cat extends Dog {
+public class Cat  {
 
   private String name;
 

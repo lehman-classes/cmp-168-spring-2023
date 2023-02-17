@@ -2,7 +2,7 @@
 /**
  * Person
  */
-public class Person extends Cat{
+public class Person {
 
   private String name;
   private double weight;

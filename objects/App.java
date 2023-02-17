@@ -8,6 +8,8 @@ public class App {
 
     YankeeFan fan = new YankeeFan();
 
+    YankeeFan.HiddenMetsFan mets = new YankeeFan.HiddenMetsFan();
+    
     System.out.println(fan.getName());
 
     // Dog d1 = new Dog();

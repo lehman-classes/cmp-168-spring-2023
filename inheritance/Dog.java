@@ -4,6 +4,12 @@
  */
 public class Dog {
 
+  private static class HiddenDog {
+
+    private int num;
+
+  }
+
   private String name;
   private double weight;
   private double height;
@@ -72,5 +78,6 @@ public class Dog {
   public void setAgeInDogYears(int age) {
     this.ageInDogYears = age;
   }
+  
   
 }

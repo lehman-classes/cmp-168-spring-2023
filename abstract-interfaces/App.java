@@ -28,6 +28,7 @@ public class App {
 		for(int i=0; i<pets.length; i++){
 			pets[i].play();
 			pets[i].eat();
+      pets[i].speak();
 		}
 		
 		

@@ -1,4 +1,4 @@
-public class Dog extends Pet{//class declaration
+public class Dog extends Pet implements Comparable<Dog> {//class declaration
 
 	private static int numDogs = 0; // counter controlled within the class
 	//member variables
@@ -14,6 +14,17 @@ public class Dog extends Pet{//class declaration
 	public void play() {
 		System.out.println("WOOF! I will play with "+getFavoriteToy());
 	}
+
+  @Override
+  public int compareTo(Dog anotherDog) {
+
+    if(this.dogNumber < anotherDog.dogNumber) {
+      return -1;
+    } else if( this.dogNumber > anotherDog.dogNumber) {
+      return 1;
+    }
+    return 0;
+  }
 	
 	
 	public Dog(){//default constructor

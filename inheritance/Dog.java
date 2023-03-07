@@ -46,7 +46,7 @@ public class Dog {
   public double getWeight() {
     return this.weight;
   }
-  
+
   public double getHeight() {
     return this.height;
   }
@@ -78,6 +78,5 @@ public class Dog {
   public void setAgeInDogYears(int age) {
     this.ageInDogYears = age;
   }
-  
-  
+
 }

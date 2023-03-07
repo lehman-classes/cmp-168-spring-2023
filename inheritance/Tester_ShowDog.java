@@ -4,13 +4,13 @@
 public class Tester_ShowDog {
 
   private static int NUM = 7;
-  
+
   public void whoAmI(Dog dog) {
     System.out.println(dog.toString());
   }
 
   public static void main(String[] args) {
-    
+
     Tester_ShowDog ts = new Tester_ShowDog();
 
     System.out.println(Tester_ShowDog.NUM);

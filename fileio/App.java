@@ -9,6 +9,12 @@ public class App {
 
   public static void main(String[] args) {
 
+    // Employee emp1 = new Employee("John", "Doe", 1000);
+    // Employee emp2 = new Employee("Jane", "Doe", 2000);
+    //
+    // emp1.getEmployeeId(); // returns 1
+    // emp2.getEmployeeId(); // returns 2
+
     File file;
     FileOutputStream fos = null;
     PrintWriter pw = null;
@@ -30,16 +36,20 @@ public class App {
       // System.out.println(file.getCanonicalPath());
 
       // (2) reading files
-      // Scanner scanner = new Scanner(file);
-      // while (scanner.hasNextLine()) {
-      // System.out.println(scanner.nextLine());
-      // }
+      if (file.exists() && file.canRead()) {
+        Scanner scanner = new Scanner(file);
+        while (scanner.hasNextLine()) {
+          System.out.println(scanner.nextLine());
+        }
+      } else {
+        System.out.println("File is not readable");
+      }
 
       // (3) scanner to read keyboard input
       // Scanner scanner = new Scanner(System.in);
       // System.out.print("Enter some text: ");
       // String input = scanner.nextLine();
-
+      //
       // fos = new FileOutputStream(file, true);
       // fos.write(input.getBytes());
       // fos.write("\r".getBytes());

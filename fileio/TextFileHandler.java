@@ -12,7 +12,7 @@ public class TextFileHandler implements TextFileIOable, TextFileDelimitedIOable 
   private PrintWriter getPrintWriter(String fileName, boolean append) {
     PrintWriter pw = null;
     try {
-      pw = new PrintWriter(new FileWriter(fileName), append);
+      pw = new PrintWriter(new FileWriter(fileName, append));
     } catch (IOException e) {
       System.err.println("Error creating file: " + fileName);
       e.printStackTrace();

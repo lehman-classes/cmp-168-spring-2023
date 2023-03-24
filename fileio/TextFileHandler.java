@@ -1,4 +1,4 @@
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -12,7 +12,7 @@ public class TextFileHandler implements TextFileIOable, TextFileDelimitedIOable 
   private PrintWriter getPrintWriter(String fileName, boolean append) {
     PrintWriter pw = null;
     try {
-      pw = new PrintWriter(new FileWriter(fileName, append));
+      pw = new PrintWriter(new FileOutputStream(fileName, append));
     } catch (IOException e) {
       System.err.println("Error creating file: " + fileName);
       e.printStackTrace();

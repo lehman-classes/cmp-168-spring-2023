@@ -7,7 +7,7 @@ class TicTacToe implements BoardGameInterface {
 
   public TicTacToe() {
     ttt = new char[NUM_ROWS][NUM_COLS];
-    // currPlayer = PLAYER_X;
+    currPlayer = PLAYER_X;
     populateBoard();
   }
 
@@ -37,7 +37,6 @@ class TicTacToe implements BoardGameInterface {
   public void placeMarker(int rowIndex, int colIndex) {
     if (ttt[rowIndex][colIndex] == EMPTY_CELL) {
       ttt[rowIndex][colIndex] = currPlayer;
-      changeTurn();
     }
   }
 
@@ -94,6 +93,7 @@ class TicTacToe implements BoardGameInterface {
   }
 
   public void changeTurn() {
+    System.out.println("Changing turn..." + currPlayer);
     if (currPlayer == PLAYER_X) {
       currPlayer = PLAYER_O;
     } else {

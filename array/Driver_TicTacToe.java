@@ -9,13 +9,12 @@ public class Driver_TicTacToe {
     game.displayBoard();
 
     while (!game.isWinner() && !game.isDraw()) {
-      game.changeTurn();
       System.out.print("Enter row index: ");
       int rowIndex = input.nextInt();
       System.out.print("Enter column index: ");
       int colIndex = input.nextInt();
       game.placeMarker(rowIndex, colIndex);
-
+      game.changeTurn();
       game.displayBoard();
     }
     input.close();

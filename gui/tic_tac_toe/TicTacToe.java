@@ -7,6 +7,7 @@ import java.awt.event.*;
 public class TicTacToe extends JFrame implements ActionListener {
 
   private JButton[][] buttons = new JButton[3][3];
+  private boolean[][] occupied = new boolean[3][3];
   private String currentPlayer = "X";
 
   /**
@@ -77,23 +78,48 @@ public class TicTacToe extends JFrame implements ActionListener {
     return true;
   }
 
+  public void setOccupied(int row, int column) {
+    occupied[row][column] = true;
+  }
+
+  public void printOccupied() {
+    for (int i = 0; i < occupied.length; i++) {
+      for (int j = 0; j < occupied[i].length; j++) {
+        System.out.print(occupied[i][j] + " ");
+      }
+      System.out.println();
+    }
+  }
+
   @Override
   public void actionPerformed(ActionEvent e) {
 
     // This is call the Game Loop
     JButton buttonClicked = (JButton) e.getSource();
     buttonClicked.setText(currentPlayer);
+
+    String actionCommand = buttonClicked.getActionCommand();
+    String[] coordinates = actionCommand.split(",");
+    int row = Integer.parseInt(coordinates[0]);
+    int column = Integer.parseInt(coordinates[1]);
+    setOccupied(row, column);
+
     if (checkWin()) {
       JOptionPane.showMessageDialog(null, "Player " + currentPlayer + " wins!");
-      System.exit(0);
+      gameFinished();
     }
     if (checkDraw()) {
       JOptionPane.showMessageDialog(null, "Draw!");
-      System.exit(0);
+      gameFinished();
     }
     togglePlayer();
     // Game Loop End
 
+  }
+
+  public void gameFinished() {
+    printOccupied();
+    System.exit(0);
   }
 
   public static void main(String[] args) {
@@ -111,11 +137,18 @@ public class TicTacToe extends JFrame implements ActionListener {
       for (int j = 0; j < 3; j++) {
         JButton button = new JButton();
         button.addActionListener(t);
+        button.setActionCommand(i + "," + j); // 0,0
 
         t.buttons[i][j] = button;
         panel.add(t.buttons[i][j]);
       }
     }
+
+    // randomly choose who goes first
+    int randomRow = (int) (Math.random() * 3);
+    int randomColumn = (int) (Math.random() * 3);
+    t.buttons[randomRow][randomColumn].doClick();
+
     t.add(panel);
 
   }
